@@ -1,0 +1,100 @@
+import java.util.Scanner;
+public class ATM_MACHINE {
+
+	public static void main(String[] args) {
+		Scanner p=new Scanner(System.in);
+		int n;
+		do {
+		System.out.println("Welcome to your nearest atm machine:");
+		System.out.println("1:Deposite the money:");
+		System.out.println("2:Widthrawl the money:");
+		System.out.println("3:Check the money:");
+		int ch;
+		Scanner r=new Scanner(System.in);
+		System.out.println("Enter your choice according to above option:");
+		ch=r.nextInt();
+		ATM b=new ATM();
+		switch(ch)
+		{
+		case 1:b.Deposite();
+		break;
+		case 2:b.Widthrawl();
+		break;
+		case 3:b.Checkbal();
+		break;
+		default :System.out.println("sorry! you have choose wrong option :");
+		}
+		System.out.println("if you wanna more operation  click just 1:");
+		 n=p.nextInt();
+		}
+		while(n==1);
+
+
+	}
+
+}
+
+class ATM
+{
+	private double money=1900000;
+	private int pwd;
+	private int bal;
+	public void Deposite()
+	{
+		Scanner s=new Scanner(System.in);
+		System.out.println("Enter the password:");
+		pwd=s.nextInt();
+
+		if(pwd==8084)
+		{
+			System.out.println("Enter the desopite balance:");
+			bal=s.nextInt();
+			
+			money=money+bal;
+			System.out.println("Recently your deposited balance:"+bal);
+			System.out.println("your total money:"+money);
+		}
+		else
+		{
+			System.out.println("sorry! you have entered wrong password:");
+		}
+	}
+	public void Widthrawl()
+	{
+		Scanner s=new Scanner(System.in);
+		System.out.println("Enter the password:");
+		pwd=s.nextInt();
+		
+		if(pwd==8084)
+		{
+			System.out.println("Enter the widthrawl balance:");
+			bal=s.nextInt();
+			money=money-bal;
+			System.out.println("Recently your widthrawled balance:"+bal);
+			System.out.println("your total money:"+money);
+		}
+		else
+		{
+			System.out.println("sorry! you have entered wrong password:");
+		}
+	}
+	public void Checkbal()
+	{
+		Scanner s=new Scanner(System.in);
+		System.out.println("Enter the password:");
+		pwd=s.nextInt();
+//		System.out.println("Enter the desopite balance:");
+//		bal=s.nextInt();
+		if(pwd==8084)
+		{
+//			money=money+bal;
+//			System.out.println("Recently you deposited balance:"+bal);
+			System.out.println("your total money:"+money);
+		}
+		else
+		{
+			System.out.println("sorry! you have entered wrong password:");
+		}
+	}
+	
+}
